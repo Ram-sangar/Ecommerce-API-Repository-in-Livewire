@@ -1,0 +1,16 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto17
+  build:
+    commands:
+      - mvn package -Dmaven.test.skip
+  post_build:
+    commands:
+      - echo Build completed
+artifacts:
+  files:
+    - target/*.jar
+  discard-paths: yes
